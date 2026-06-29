@@ -30,8 +30,8 @@ Users should be able to:
 
 *(Note: Replace these paths with your repository images once you take screenshots of your completed build)*
 
-- Mobile View (375px): `./screenshots/mobile-view.png`
-- Desktop View (1440px): `./screenshots/desktop-view.png`
+- Mobile View (375px): `./design/mobile-view.png`
+- Desktop View (1440px): `./design/desktop-view.png`
 
 ### Links
 
