@@ -121,7 +121,7 @@ main {
   line-height: 1.2;
   letter-spacing: 0.034em;
   color: var(--color-purple-950);
-  padding-inline-end: clamp(1rem, 2vw, 1.5rem); /* Păstrezi modificarea ta logică anterioară */
+  padding-inline-end: clamp(1rem, 2vw, 1.5rem);
 
   /* ACCESSIBILITY COMPLIANCE: The transition is strictly nested under a no-preference profile.
      This targets the source precisely and eliminates the linter warning with zero layout shift! */
