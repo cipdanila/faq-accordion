@@ -317,7 +317,6 @@ main {
     transition: color 200ms ease;
   }
 
-  /* OPTIMIZED: Combined into a single short-hand syntax to appease the linter */
   .faq-answer {
     transition: grid-template-rows 200ms ease-out, visibility 200ms ease-out;
   }
@@ -331,12 +330,13 @@ main {
   }
 }
 
-/* THE COEXISTENCE BRIDGE: Providing the explicit, immediate alternative 
-   to silence the 4 remaining accessibility warnings completely */
+/* THE PERFECT COEXISTENCE BRIDGE: 
+   Explicitly disabling transitions for ALL components to clear the final 2 warnings! */
 @media (prefers-reduced-motion: reduce) {
+  .faq-question > span,
   .faq-answer,
-  .faq-answer > p {
+  .faq-answer > p,
+  .attribution a {
     transition: none;
   }
 }
-
