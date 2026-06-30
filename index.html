@@ -17,15 +17,17 @@
 </head>
 <body>
   <main>
-    <h2 class="faq-title">
+    <!-- ACCESSIBILITY FIX: Promoted to level-one heading (W3C Validator compliance) -->
+    <h1 class="faq-title">
       <img src="./assets/images/icon-star.svg" alt="" aria-hidden="true" />
       <span>FAQs</span>
-    </h2>
+    </h1>
 
     <div class="faq">
       <div class="faq-item">
         <h3>
-          <button class="faq-question" aria-expanded="true" aria-controls="faq-panel-1">
+          <!-- STRUCTURE FIX: Explicit type="button" injected to prevent auto-form submit -->
+          <button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-panel-1">
             <span>What is Frontend Mentor, and how will it help me?</span>
             <span class="faq-icon-container" aria-hidden="true">
               <img src="./assets/images/icon-plus.svg" alt="" class="icon-plus" />
@@ -44,7 +46,8 @@
 
       <div class="faq-item">
         <h3>
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-2">
+          <!-- STRUCTURE FIX: Explicit type="button" injected to prevent auto-form submit -->
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-2">
             <span>Is Frontend Mentor free?</span>
             <span class="faq-icon-container" aria-hidden="true">
               <img src="./assets/images/icon-plus.svg" alt="" class="icon-plus" />
@@ -59,7 +62,8 @@
       </div>
       <div class="faq-item">
         <h3>
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-3">
+          <!-- STRUCTURE FIX: Explicit type="button" injected to prevent auto-form submit -->
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-3">
             <span>Can I use Frontend Mentor projects in my portfolio?</span>
             <span class="faq-icon-container" aria-hidden="true">
               <img src="./assets/images/icon-plus.svg" alt="" class="icon-plus" />
@@ -74,7 +78,8 @@
       </div>
       <div class="faq-item">
         <h3>
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-panel-4">
+          <!-- STRUCTURE FIX: Explicit type="button" injected to prevent auto-form submit -->
+          <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-4">
             <span>How can I get help if I'm stuck on a challenge?</span>
             <span class="faq-icon-container" aria-hidden="true">
               <img src="./assets/images/icon-plus.svg" alt="" class="icon-plus" />
