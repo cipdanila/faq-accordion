@@ -122,12 +122,6 @@ main {
   letter-spacing: 0.034em;
   color: var(--color-purple-950);
   padding-inline-end: clamp(1rem, 2vw, 1.5rem);
-
-  /* ACCESSIBILITY COMPLIANCE: The transition is strictly nested under a no-preference profile.
-     This targets the source precisely and eliminates the linter warning with zero layout shift! */
-  @media (prefers-reduced-motion: no-preference) {
-    transition: color 200ms ease;
-  }
 }
 
 .faq-question:hover > span,
@@ -179,18 +173,13 @@ main {
 }
 
 /* ==========================================================================
-   7. THE FLUID ANSWER ENGINE (CSS GRID TRANSITION)
+   7. THE FLUID ANSWER ENGINE
    ========================================================================== */
 .faq-answer {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
   visibility: hidden; 
-  
-  /* SYNTAX FIX: Adjusted delay vectors to map directly inside specification bounds */
-  transition-property: grid-template-rows, visibility;
-  transition-duration: 200ms, 200ms;
-  transition-timing-function: ease-out, ease-out;
 }
 
 .faq-answer[data-state="active"] {
@@ -205,7 +194,6 @@ main {
   line-height: 1.5;
   padding-block-start: clamp(0rem, 0vw, 0rem); 
   padding-block-end: clamp(1.125rem, 4vw, 1.125rem);
-  transition: padding-top 250ms ease-out; 
 }
 
 .faq-answer[data-state="active"] > p {
@@ -241,7 +229,6 @@ main {
   color: var(--color-purple-950);
   text-decoration: none;
   font-weight: 600;
-  transition: color 150ms ease;
 }
 
 .attribution a:hover,
@@ -322,3 +309,25 @@ main {
   }
 }
 
+/* ==========================================================================
+   10. FLUID MOTION MATRIX (FRONTEND MENTOR ACCESSIBILITY COMPLIANCE)
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  /* Injecting hover color fluidity safely */
+  .faq-question > span,
+  .attribution a {
+    transition: color 200ms ease;
+  }
+
+  /* Injecting accordion expansion smoothness */
+  .faq-answer {
+    transition-property: grid-template-rows, visibility;
+    transition-duration: 200ms, 200ms;
+    transition-timing-function: ease-out, ease-out;
+  }
+
+  /* Injecting dynamic padding adjustment flow */
+  .faq-answer > p {
+    transition: padding-top 250ms ease-out;
+  }
+}
