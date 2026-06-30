@@ -25,13 +25,13 @@
 
 /* ACCESSIBILITY SAFEGUARD: Handles reduced-motion profiles seamlessly to prevent nausea */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html *,
+  html *::before,
+  html *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
 }
 
@@ -63,8 +63,8 @@ main {
   border-radius: clamp(0.375rem, 4vw, 0.375rem);
   padding: clamp(1.5rem, 6vw, 2.5rem); 
   box-shadow: 0 clamp(1rem, 3vw, 2.5rem) clamp(2rem, 5vw, 5rem) color-mix(in srgb, var(--color-purple-950) 5%, transparent);
-  margin-top: clamp(1.125rem, 4vw, 1.125rem); 
-  margin-bottom: clamp(1rem, 4vw, 1rem);
+  margin-block-start: clamp(1.125rem, 4vw, 1.125rem); 
+  margin-block-end: clamp(1rem, 4vw, 1rem);
   min-height: clamp(32.875rem, 4vw, 32.875rem); 
   transform: translateX(clamp(0.0625rem, 0vw, 0.0625rem));
 }
@@ -76,7 +76,7 @@ main {
   display: flex;
   align-items: center;
   gap: clamp(1.5rem, 4vw, 1.5rem);  
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  margin-block-end: clamp(1rem, 2vw, 1.5rem);
 }
 
 .faq-title img {
@@ -125,8 +125,8 @@ main {
   padding-right: clamp(1rem, 2vw, 1.5rem);
 }
 
-.faq-question:hover > span:not(.faq-icon-container),
-.faq-question:focus-visible > span:not(.faq-icon-container) {
+.faq-question:hover > span,
+.faq-question:focus-visible > span {
   color: var(--color-purple-600);
   filter: saturate(3); 
 }
@@ -198,13 +198,13 @@ main {
   color: var(--color-purple-600);
   font-size: clamp(0.875rem, 2vw, 1rem); 
   line-height: 1.5;
-  padding-top: clamp(0rem, 0vw, 0rem); 
-  padding-bottom: clamp(1.125rem, 4vw, 1.125rem);
+  padding-block-start: clamp(0rem, 0vw, 0rem); 
+  padding-block-end: clamp(1.125rem, 4vw, 1.125rem);
   transition: padding-top 250ms ease-out; 
 }
 
 .faq-answer[data-state="active"] > p {
-  padding-top: clamp(1rem, 4vw, 1.125rem); 
+  padding-block-start: clamp(1rem, 4vw, 1.125rem); 
 }
 
 .faq-item:nth-child(2) .faq-question {
@@ -257,8 +257,8 @@ main {
   main {
     max-width: 37.5rem; 
     min-height: auto;
-    margin-top: clamp(0rem, 0vw, 0rem);
-    margin-bottom: clamp(0rem, 0vw, 0rem);
+    margin-block-start: clamp(0rem, 0vw, 0rem);
+    margin-block-end: clamp(0rem, 0vw, 0rem);
     padding: clamp(2.5rem, 4vw, 2.5rem); 
     border-radius: clamp(1rem, 2vw, 1rem);
     
@@ -269,7 +269,7 @@ main {
   .faq-title {
     /* OPTIMIZED: Removed the useless 0rem transform translate block */
     gap: clamp(1.5rem, 0vw, 1.5rem); 
-    margin-bottom: clamp(1rem, 0vw, 1rem); 
+    margin-block-end: clamp(1rem, 0vw, 1rem); 
   }
 
   .faq-title img {
@@ -289,16 +289,16 @@ main {
   }
 
   .faq-answer > p {
-    padding-bottom: clamp(1rem, 0vw, 1rem);
+    padding-block-end: clamp(1rem, 0vw, 1rem);
   }
 
-  .faq-question > span:not(.faq-icon-container) {
+  .faq-question > span:first-child {
     letter-spacing: -0.002em; 
   }
 
   /* RESET 4: Your brilliant discovery - clearing the active text padding */
   .faq-answer[data-state="active"] > p {
-    padding-top: clamp(0rem, 0vw, 0rem); 
+    padding-block-start: clamp(0rem, 0vw, 0rem); 
     transform: translateY(clamp(0.5rem, 0vw, 0.5rem));
     letter-spacing: -0.002em;
   }
