@@ -313,21 +313,30 @@ main {
    10. FLUID MOTION MATRIX (FRONTEND MENTOR ACCESSIBILITY COMPLIANCE)
    ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
-  /* Injecting hover color fluidity safely */
-  .faq-question > span,
-  .attribution a {
+  .faq-question > span {
     transition: color 200ms ease;
   }
 
-  /* Injecting accordion expansion smoothness */
+  /* OPTIMIZED: Combined into a single short-hand syntax to appease the linter */
   .faq-answer {
-    transition-property: grid-template-rows, visibility;
-    transition-duration: 200ms, 200ms;
-    transition-timing-function: ease-out, ease-out;
+    transition: grid-template-rows 200ms ease-out, visibility 200ms ease-out;
   }
 
-  /* Injecting dynamic padding adjustment flow */
   .faq-answer > p {
     transition: padding-top 250ms ease-out;
   }
+
+  .attribution a {
+    transition: color 150ms ease;
+  }
 }
+
+/* THE COEXISTENCE BRIDGE: Providing the explicit, immediate alternative 
+   to silence the 4 remaining accessibility warnings completely */
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer,
+  .faq-answer > p {
+    transition: none;
+  }
+}
+
