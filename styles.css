@@ -121,8 +121,13 @@ main {
   line-height: 1.2;
   letter-spacing: 0.034em;
   color: var(--color-purple-950);
-  transition: color 200ms ease;
-  padding-inline-end: clamp(1rem, 2vw, 1.5rem);
+  padding-inline-end: clamp(1rem, 2vw, 1.5rem); /* Păstrezi modificarea ta logică anterioară */
+
+  /* ACCESSIBILITY COMPLIANCE: The transition is strictly nested under a no-preference profile.
+     This targets the source precisely and eliminates the linter warning with zero layout shift! */
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color 200ms ease;
+  }
 }
 
 .faq-question:hover > span,
@@ -317,17 +322,3 @@ main {
   }
 }
 
-/* ==========================================================================
-   10. SUPREME ACCESSIBILITY OVERRIDES (LINTER COMPLIANT)
-   ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  /* We stack the parent selectors to increase specificity naturally without !important */
-  .faq .faq-question > span,
-  .faq .faq-answer,
-  .faq .faq-answer > p,
-  body .attribution a {
-    transition: none;
-    transition-duration: 0s;
-    transition-delay: 0s;
-  }
-}
