@@ -28,7 +28,6 @@ Users should be able to:
 
 ### Screenshot
 
-*(Note: Replace these paths with your repository images once you take screenshots of your completed build)*
 
 - Mobile View (375px): ![FAQ Accordion Mobile View](./screenshots/mobile-view.png) 
 - Desktop View (1440px): ![FAQ Accordion Desktop View](./screenshots/desktop-view.png)
