@@ -122,7 +122,7 @@ main {
   letter-spacing: 0.034em;
   color: var(--color-purple-950);
   transition: color 200ms ease;
-  padding-right: clamp(1rem, 2vw, 1.5rem);
+  padding-inline-end: clamp(1rem, 2vw, 1.5rem);
 }
 
 .faq-question:hover > span,
@@ -314,5 +314,20 @@ main {
 
   .faq-item:nth-child(4) .faq-question {
     transform: translateY(clamp(1.875rem, 0vw, 1.875rem)); 
+  }
+}
+
+/* ==========================================================================
+   10. SUPREME ACCESSIBILITY OVERRIDES (LINTER COMPLIANT)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  /* We stack the parent selectors to increase specificity naturally without !important */
+  .faq .faq-question > span,
+  .faq .faq-answer,
+  .faq .faq-answer > p,
+  body .attribution a {
+    transition: none;
+    transition-duration: 0s;
+    transition-delay: 0s;
   }
 }
